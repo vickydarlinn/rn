@@ -9,6 +9,7 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ProductCard from '../../components/ProductCard';
 import {SafeAreaView, useSafeAreaInsets} from 'react-native-safe-area-context';
+import Header from '../../components/Header';
 
 const imageURIs = [
   'https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=300&q=60',
@@ -92,25 +93,26 @@ const Store = () => {
 
   return (
     <SafeAreaView style={[styles.container, {paddingBottom: insert.bottom}]}>
+      <Header />
       {/* Search Bar */}
       <View style={styles.searchContainer}>
         <View style={styles.searchInputContainer}>
           <Icon
             name="search"
             size={20}
-            color="#888"
+            color="#666"
             style={styles.searchIcon}
           />
           <TextInput
             style={styles.searchInput}
             placeholder="Search products..."
-            placeholderTextColor="#888"
+            placeholderTextColor="#666"
             value={searchQuery}
             onChangeText={handleSearch}
           />
           {searchQuery.length > 0 && (
             <TouchableOpacity onPress={clearSearch} style={styles.clearButton}>
-              <Icon name="close" size={20} color="#888" />
+              <Icon name="close" size={20} color="#666" />
             </TouchableOpacity>
           )}
         </View>
@@ -138,7 +140,7 @@ const Store = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: '#f8f9fa',
   },
   searchContainer: {
     flexDirection: 'row',
@@ -151,19 +153,27 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#1a1a1a',
+    backgroundColor: '#ffffff',
     borderRadius: 25,
     borderWidth: 1,
-    borderColor: '#333',
+    borderColor: '#e0e0e0',
     paddingHorizontal: 16,
     height: 50,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 1,
   },
   searchIcon: {
     marginRight: 12,
   },
   searchInput: {
     flex: 1,
-    color: '#fff',
+    color: '#333',
     fontSize: 16,
     height: '100%',
   },

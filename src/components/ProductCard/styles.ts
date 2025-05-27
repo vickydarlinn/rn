@@ -2,20 +2,20 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   card: {
-    backgroundColor: '#1a1a1a',
+    backgroundColor: '#ffffff',
     borderRadius: 16,
     marginVertical: 8,
     marginHorizontal: 16,
     borderWidth: 1,
-    borderColor: '#333333',
+    borderColor: '#e0e0e0',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.1,
     shadowRadius: 3.84,
-    elevation: 5,
+    elevation: 3,
     overflow: 'hidden', // Important for borderRadius to work with image
   },
   imageContainer: {
@@ -32,7 +32,7 @@ export default StyleSheet.create({
     padding: 20, // Moved padding here for content area only
   },
   title: {
-    color: '#ffffff',
+    color: '#333333',
     fontSize: 16,
     fontWeight: '500',
     textAlign: 'left',
@@ -46,7 +46,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   price: {
-    color: '#ffffff',
+    color: '#1a1a1a',
     fontSize: 18,
     fontWeight: '700',
     flex: 1,
@@ -56,7 +56,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'transparent',
     borderWidth: 1.5,
-    borderColor: '#ffffff',
+    borderColor: '#333333',
     borderRadius: 25,
     paddingHorizontal: 4,
     paddingVertical: 2,
@@ -71,13 +71,13 @@ export default StyleSheet.create({
     borderRadius: 16,
   },
   buttonText: {
-    color: '#ffffff',
+    color: '#333333',
     fontSize: 18,
     fontWeight: '600',
     lineHeight: 20,
   },
   quantity: {
-    color: '#ffffff',
+    color: '#333333',
     fontSize: 16,
     fontWeight: '500',
     minWidth: 24,
