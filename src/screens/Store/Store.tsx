@@ -9,7 +9,6 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ProductCard from '../../components/ProductCard';
 import {SafeAreaView, useSafeAreaInsets} from 'react-native-safe-area-context';
-import Header from '../../components/Header';
 
 const imageURIs = [
   'https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=300&q=60',
@@ -93,7 +92,6 @@ const Store = () => {
 
   return (
     <SafeAreaView style={[styles.container, {paddingBottom: insert.bottom}]}>
-      <Header />
       {/* Search Bar */}
       <View style={styles.searchContainer}>
         <View style={styles.searchInputContainer}>

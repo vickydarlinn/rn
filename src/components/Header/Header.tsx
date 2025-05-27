@@ -1,5 +1,7 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {DrawerNavigationProp} from '@react-navigation/drawer';
+import {useNavigation} from '@react-navigation/native';
 
 type HeaderProps = {
   title?: string;
@@ -7,6 +9,12 @@ type HeaderProps = {
 };
 
 const Header: React.FC<HeaderProps> = ({title, logoSource}) => {
+  const navigation = useNavigation<DrawerNavigationProp<any>>();
+
+  const openDrawer = () => {
+    navigation.openDrawer();
+  };
+
   return (
     <View style={styles.container}>
       <Image
@@ -15,17 +23,24 @@ const Header: React.FC<HeaderProps> = ({title, logoSource}) => {
         resizeMode="contain"
       />
       {title && <Text style={styles.title}>{title}</Text>}
+
+      {/* Hamburger Menu Button */}
+      <TouchableOpacity style={styles.menuButton} onPress={openDrawer}>
+        <View style={styles.hamburgerLine} />
+        <View style={styles.hamburgerLine} />
+        <View style={styles.hamburgerLine} />
+      </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    height: 60,
-    backgroundColor: 'transparent',
+    backgroundColor: '#f8f9fa',
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 10,
+    justifyContent: 'space-between',
+    paddingRight: 16,
   },
   logo: {
     width: 100,
@@ -35,6 +50,21 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginLeft: 12,
+    flex: 1,
+  },
+  menuButton: {
+    padding: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 40,
+    height: 40,
+  },
+  hamburgerLine: {
+    width: 25,
+    height: 3,
+    backgroundColor: '#333',
+    marginVertical: 2,
+    borderRadius: 2,
   },
 });
 

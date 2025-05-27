@@ -51,7 +51,7 @@ const BottomTabNavigator = () => {
           right: 20,
           borderRadius: 20,
           paddingBottom: 8,
-          paddingTop: 8,
+          paddingTop: 6,
           elevation: 6,
           shadowColor: '#000',
           shadowOffset: {width: 0, height: 4},
@@ -64,11 +64,12 @@ const BottomTabNavigator = () => {
           fontWeight: '600',
           color: '#140083',
           textAlign: 'center',
+          marginTop: 5,
         },
       }}>
       <Tab.Screen
         name="Home"
-        component={Home}
+        component={Community}
         options={{
           tabBarIcon: ({focused}) => (
             <TabIcon

@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ffffff', // Dark black background like your UI
+    backgroundColor: '#f8f9fa',
   },
   text: {
     color: '#000000', // White text for contrast
